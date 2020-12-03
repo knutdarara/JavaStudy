@@ -1,1 +1,19 @@
-git 테스트
+git : 효율적인 협업을 위해서 형상관리 tool이다. 
+git 용어 
+
+git config --global user.name "MW Sim"
+git config --global user.email knutdarara@gmail.com
+
+git init
+git clone origin <remote url>
+git pull origin master
+
+작업
+
+git add .
+git commit -m "작업내용"
+      index, staging area  (repo)
+git push origin master
+    create remote branch (master)
+
+pull request
