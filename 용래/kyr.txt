@@ -1,0 +1,59 @@
+용어를 사용하는 순서
+git init으로 뼈대를 설치해줌
+git clone으로 remote repo에서 자료 가져옴
+working dir 작업공간에 설치
+pull 로 working dir에 설치하기(git pull origin main)
+작업후에 add 로 저장
+commit으로 변경내용 확정
+push로 remote repo에 업로드
+branch 에 넣어서 적용
+pull request를 통해서 merge를함
+
+working dir 별칭 -  origin 애도 branch임
+remote repo의 branch의 이름은 main
+
+git : 효율적인 협업을 위한 형상관리 tool이다. 나눠서 코드설계를 할 때 난잡해지는경우가 있음 그런 부분을 보완하고자 나온 것이 svn,git등
+svn과 git의 차이
+svn은 코드 전체를 백업
+git은 내가 수정한 것들만 확인 후, 그것만 업로드
+그래서 git을 많이 사용
+
+
+오늘 실습해본 순서.
+
+config --global user.name "이름"
+config --global user.email "이메일"
+
+폴더 생성하기
+git init -> 폴더에 깃뼈대 설치
+git remote add origin [http주소]
+git pull origin main
+작업
+git add .
+git commit -m "작업 내용
+git push origin master
+내용수정
+git add .
+git commit -m "pull req 수정"
+git push origin masger
+
+
+
+#####
+
+폴더 생성하기
+git init
+git clone origin [리모트 url]
+git pull origin master
+작업
+git add .
+git commit -m "작업내용"
+   index, staging area (repo)
+git push origin master
+
+###########
+
+새로 배운 명령어
+git branch   <- 현재 작업하고 있는 브랜치확인
+git branch [추가할 브랜치명] <- 브랜치 생성
+git checkout [사용할 브랜치명] <- 브랜치 변경
