@@ -1,12 +1,12 @@
 git : 효율적인 협업을 위해서 형상관리 tool이다. 
 git 용어 
 
-git config --global user.name "MW Sim"
-git config --global user.email knutdarara@gmail.com
+git config --global user.name "KTH"
+git config --global user.email "kksan33@naver.com"
 
-git init
-git clone origin <remote url>
-git pull origin master
+git init    
+git clone origin <remote url>        git clone으로 remote repo의 자료를 가져옴
+git pull origin master             remote
 
 작업
 
