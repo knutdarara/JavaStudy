@@ -1,0 +1,94 @@
+git init
+(맨 처음 git 경로 설정할 폴더 지정 해두고 시작 or 폴더 오른쪽 클릭 후 git bash 시작.
+프로젝트 폴더에서 git 초기화(버전 관리 시작)
+
+git 명령어는 반드시 해당 프로젝트 디렉토리에서 입력해야 함.
+
+git status 
+
+-Untracked files : 프로젝트 내의 git 관리 안되는 파일
+
+-Changes not staged for commit : add 후 commit 대기상태(stage area)인 파일
+
+git add test.txt 
+
+1. git이 관리하도록 파일(test.txt) 추가
+
+2. 버전 관리 중인 파일(test.txt)이 변경 되었을때 사용
+	
+※git add
+
+1 commit은 1개의 작업을 담는게 적절하다. 만약 여러 개의 작업이 진행되었을 경우, git add로 선택적으로 작업 파일을
+commit 할 수 있다. 또한 임시 파일을 제외하고 핵심 파일만 관리할 수 있다.
+
+
+git config --global user.name '이름'
+git config --global user.email 이메일
+git config --list 설정한 내용 확인
+
+최초 1번, commit에 남을 name과 이메일 설정
+
+// Github 원격저장소와 연결한다.
+git remote add origin [자신의 Github 원격저장소 주소]
+ 
+// 연결된 원격저장소 확인한다.
+git remote -v
+
+
+git commit  
+버전 만들기(commit) 후 vim으로 commit 메시지 입력
+
+git log 
+commit 내용 확인
+
+-- 주의 할것 --
+add한 파일은 commit 대기 상태(stage area)에 들어간다. commit 후에는 파일은 repository로 이동한다.
+branch 목록에 master도 나오지 않고 fatal: Not a valid object name: 'master'. 이라는 에러 메세지가 발생하면서 
+다른 branch 생성도 되지 않는다.
+
+이 이유는 master branch에서 최초의 commit을 하지 않았기 때문이다.
+
+다른 분기를 만들기 위해서는 master에서 commit을 최소 1번은 해야한다.
+
+
+git log -p
+commit 간에 파일의 바뀐 내용을 보여줌
+
+git reset 커밋ID --hard
+원격 저장소에는 reset을 사용하면 안된다. 왜?
+
+reset 옵션?
+
+
+git revert 
+
+/git 메뉴얼 사용하기 
+git commit --help
+git commit -am "커밋메세지"  -> git add, commit, 커밋 메세지 입력을 한번에
+
+/branch
+-브랜치 확인
+git branch
+
+-브랜치 생성
+git branch test_1
+
+-브랜치 선택
+git checkout test_1
+
+-브랜치 간에 차이 확인
+git log master..test_1 -p
+git diff master..test_1
+
+-git log 브랜치 출력
+git log --branches --decorate --graph (--oneline)
+
+pwd -> 현재 폴더 위치 확인
+
+cd 
+
+mkdir 
+
+ls
+
+ls -al
