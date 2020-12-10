@@ -1,6 +1,17 @@
 git : 효율적인 협업을 위해서 형상관리 tool이다. 
 git 용어 
 
+용어를 사용하는 순서
+git init으로 뼈대를 설치해줌
+git clone으로 remote repo에서 자료 가져옴
+working dir 작업공간에 설치
+pull 로 working dir에 설치하기(git pull origin main)
+작업후에 add 로 저장
+commit으로 변경내용 확정
+push로 remote repo에 업로드
+branch 에 넣어서 적용
+pull request를 통해서 merge를함
+--------------------------------------------------------------------------------------------------
 git config --global user.name "KTH"
 git config --global user.email "kksan33@naver.com"
 
