@@ -15,4 +15,4 @@
         
         int, Integer 차이.
         
-        추상화를 이용한 stack, queue 구현 (이건 수업때 할 내용)
+        인터페이스를 이용한 stack, queue 구현 (이건 수업때 할 내용)
