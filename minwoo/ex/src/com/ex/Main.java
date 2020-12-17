@@ -15,7 +15,7 @@ public class Main {
         }
         System.out.println();
         for (int i = 0; i < 5; i++) {
-            System.out.println("pop을 한뒤 나온 값. = " + Pop() );
+            System.out.println("pop을 한뒤 나온 값. = " + Pop());
         }
         for (int i = 0; queue[i] != null; i++) {
 
@@ -39,7 +39,7 @@ public class Main {
                 queue[i] = queue[i + 1];
 
             }
-            queue[queueSize-1] = null;
+            queue[queueSize - 1] = null;
             return result;
         } else {
             int result = -1;
@@ -47,6 +47,4 @@ public class Main {
             return result;
         }
     }
-
-    interface
 }
