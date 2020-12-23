@@ -39,7 +39,7 @@ public class Main {
                 queue[i] = queue[i + 1];
 
             }
-            queue[queueSize - 1] = null;
+            queue[queueSize - 1] = null; // gc 메모리 반납.
             return result;
         } else {
             int result = -1;
