@@ -1,0 +1,211 @@
+객체 지향프로그래밍이 자주 쓰이는 이유 :
+
+객체 : 객체지향 프로그래밍의 대상 , 의사나 행위가 미치는 대상,
+	생성된 인스턴스
+
+객체지향 프로그래밍 Object Oriented Programming , OOP ) : 객체를 정의, 객체간의 기능 협력, 
+
+절차 프로그래밍 (procedure 프로시저) : 시간의 흐름에 따른 순차적인 프로그래밍   ex) C언어
+
+클래스 : 객체에 대한 속성과 기능을 코드로 구현한 것 , 객체를 프로그래밍하기 위해 코드로 만든 상태
+	"클래스를 정의한다고 함"
+
+객체의 속성
+	객체의 특성	 속성	멤버변수
+	property		attribute	member variable
+객체의 기능 : 객체가 하는 기능들은 메서드로 구현
+	method,	member function
+
+--------------------------------------------------------------------
+클래스 정의법
+	class는 대부분 대문자로 시작
+	하나의 java파일에 하나의 클래스가 원칙,
+	여러개의 클래스가 같이 있는경우 public 클래스는 단 1개
+	public 클래스와 자바 파일의 이름은 동일 해야함.
+
+	자바의 모든 코드는 class 내부에 위치
+
+( 접근 제어자 ) class 클래스 이름 {
+	멤버 변수;
+	메서드;
+}
+
+학생 클래스의 예 
+	속성: 학번, 이름 , 학년, 사는 곳 etc..
+	기능 : 수강신청, 수업듣기, 시험보기 etc..
+
+String : jdk에서 제공하는 class 문자열을 구현해놓음
+
+------------------------------------------------------------------------------------
+패키지 : 소스의 묶음 , 클래스를 구별해주는 기능 , 
+패키지의 계층구조를 만드는 작업은 소스코드를 어떤 계층 구조로 관리할지 구성하는 것 
+
+------------------------------------------------------------
+인스턴스 : 클래스가 메모리에 생성된 상태 
+
+메서드 : 함수의 일종  객체의 기능을 제공하기 위해 클래스 내부에 구현되는 함수 
+	멤버 변수를 이용하여 클래스의 기능을 구현
+
+멤버 변수 : 클래스의 속성, 특성
+
+함수란 ? 하나으 ㅣ기능을 수행하는 일련의 코드, 중복되는 기능은 함수로 구현하여 함수를 호출하여 사용.
+
+함수 이름: 함수의 기능과 관련하여 명명
+매개 변수 : 함수의 수행을 위해 필요한 변수
+return : 함수 수행 결과를반환하기 위한 예약어
+함수 반환 형 : 반환 값의 자료형을 나타냄 , 반환 값이 없는 경우 void 라 씀.
+	
+public class FunctionTest {
+    public static void  main(String[] args){
+        int num1 =10;
+        int num2 =22;
+
+        int sum = addNum(num1,num2);
+        System.out.println(sum);
+    }
+    public static int addNum(int n1, int n2){
+        int result = n1 + n2;
+        return result;
+    }
+}
+
+함수와 스택메모리
+	함수가 호출될 떄 사용하는 메모리 - 스택(stack)
+	함수의 기능 수행이 끝나면 자동으로 반환되는 메모리
+
+-------------------------------------------------------------------------------------
+클래스 ( static 코드)  ---생성(인스턴스화)-->> 인스턴스 ( dynamic memory)
+
+클래스 생성하기 
+new 예약어를 이용하여 클래스 생성
+
+클래스형 변수이름 = new 생성자;
+Student studentA = new Student();
+
+
+int 객체가아니고 기본 데이터 타입임. 원래 언어에서 제공됨
+Integer 객체에 해당, 우리가 메소드나 속성 프로퍼티를 설정가능. 생성해서 씀. 참조형데이터타입, 참조변수로 변수명 지정.
+
+main이 항상 클래스 안에 있어야하는것은 아님.
+
+public class Student {
+    int studentID;
+    String studentName;
+    int grade;
+    String address;
+
+    public void showStudentInformation(){
+        System.out.println(studentName+","+studentID+"번"+", 거주지: "+address);
+    }
+    public String getStudentName(){
+        return studentName;
+    }
+    public  void setStudentName(String name){
+        studentName =name;
+    }
+    public static void main(String[] args){
+        Student studentKIM = new Student();
+//        studentKIM 참조변수
+        studentKIM.studentName="김태헌";
+        studentKIM.studentID=141049;
+        studentKIM.address="인천광역시 미추홀구";
+
+        Student studentLEE = new Student();
+        studentLEE.studentName="이준";
+        studentLEE.studentID=144444;
+        studentLEE.address="광주광역시 북구";
+
+        studentKIM.showStudentInformation();
+        studentLEE.showStudentInformation();
+    }
+
+}
+--------------------------------------------------------------------------------------------------
+인스턴스 여러개 생성하기 .
+인스턴스와 힙( Heap)메모리 
+하나의 클래스 코드로부터 여러개의 인스턴스를 생성
+studentKIM 과 studentLEE 가 인스턴스에 해당  >>> 인스턴스는 힙( Heap )메모리에 생성됨.
+각각의 인스턴스는 다른 메모리에 다른 값을 가진다. 
+생성된 주소를 가리킨다. 
+
+stack메모리 함수가 호출되면 지역변수가 쌓이고 함수가 끝나면 스택이 자동적으로 사라짐.
+heap메모리는 new라는 키워드로 생성되고 자동제거X , 가비지콜렉터로 없애줘야함.
+
+Heap메모리에 해당.
+int studentID;
+String studentName;
+int grade;
+String address;
+
+가비지콜렉터: 자바에서 제공하는 서비스. 사용하지 않는 메모리 수거함.
+
+참조변수 : 메모리에 생성된 인스턴스를 가리키는 변수
+studentKIM
+studentLEE
+참조값 : 생성된 인스턴스의 메모리 주소값 
+com.company.ex_class.Student@1b6d3586
+com.company.ex_class.Student@4554617c   
+
+----------------------------------------------------------------------
+생성자 ( constructor ) : 
+	생성자는 인스턴스를 초기화 할 떄의 명령어 집합.
+	생성자의 이름은 그 클래스의 이름과 동일
+	상속X , 반환타입  X  , new 키워드에 의해서만 호출됨.
+
+기본생성자 public Student() {}
+생성자가 1개도 없을떄 자바 컴파일러가 디폴트 생성자 추가해줌. ( 특징 : 매개변수 x , 구현코드 x )
+
+생성자 기본 문법 
+<modifiers><class_name>([<argument_list>])
+{
+[<statements>]
+}
+
+디폴트 생성자 ( default constructor)
+	하나의 클래스에는 반드시  하나이상의 생성자가 존재,
+	Constructor를 기술하지 않으면 Default Constructor가 자동으로 생김 ( 컴파일러가 코드에 넣어줌 ) 
+	Default Constructor는 매개변수가 없고 구현부가 없음.
+	클래스에 매개변수가 있는 생성자를 추가하면 디폴트 생성자는 제공되지않음.
+
+생성자 오버로드 :  필요에 의해 생성자 추가하는 경우 여러개의 생성자가 하나의 클래스에 있음.
+
+-------------------------------------------------------------------
+참조 자료형 reference data type 
+
+변수의 자료형 	- 기본 자료형
+		- int ,long , float ,double etc..
+		-참조 자료형
+		-String , Data,  >> 클래스형으로 선언하는 자료형 
+
+정보 은닉 ( information hiding) 
+	private 접근 제어자 
+	클래스의 외부에서 클래스 내부의 멤버 변수나 메서드에 접근하지 못하게 하는경우 사용
+	멤버 변수나 메서드를 외부에서 사용하지 못하도록 하여 오류를 줄일 수 있음
+	변수에 대해서는 필요한 경우 get() set()메서드를 제공 
+
+접근제어자 4가지
+public : 외부 클래스에서 사용가능
+private : 내 클래스 안에서만 사용가능 , 외부에서 접근 불가
+default  아무것도 안쓰는것  : 같은 패키지 내에서 접근가능
+상속 : 상속관계에서는 public 처럼 사용가능
+
+------------------------------------------------------------------------
+
+this 
+	자신의 메모리를 가리킴. 생성된 인스턴스 스스로를 가리키는 예약어.
+	생성자에서 다른 생성자를 호출
+	자신의 주소를 반환함
+--------------------------------------------------------------
+객체 2 ( 2 )
+
+객체 간의 협력
+
+학생 / 버스 / 지하철 
+
+----------------------------------------------------------\
+static 변수의 정의와 사용방법
+
+여러개의 인스턴스가 같은 메모리의 값을 공유하기 위해 사용 
+
+
+
