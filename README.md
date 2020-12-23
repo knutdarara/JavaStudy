@@ -16,3 +16,14 @@
         int, Integer 차이.
         
         인터페이스를 이용한 stack, queue 구현 (이건 수업때 할 내용)
+        
+5주차 : java @가 무엇인가. (어노테이션)
+        java object class 알아보기
+
+        인터페이스, 추상클래스 // 심화로 알아올것 (심민우) 
+
+        singleton pattern
+
+        컬렉션 프레임워크 - Stack, Queue,
+
+        mark down
