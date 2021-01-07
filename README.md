@@ -27,3 +27,20 @@
         컬렉션 프레임워크 - Stack, Queue,
 
         mark down
+
+6주차 : mark down                                     - 환건씨
+
+        singleton pattern                             - 연지
+
+        컬렉션 프레임워크 - Stack, Queue                - 당일 랜덤
+
+        컬렉션 프레임워크                            - 태헌
+
+        제네릭 프로그래밍                            - 용래씨
+        java object class 알아보기                  - 용래씨
+        내부 클래스                                     - 용래씨
+
+        람다식                                            - 연지
+        스트림                                            - 태헌
+
+        git 실습을 준비                                 - 민우. (전체 부족할 시 설명가능하도록)
