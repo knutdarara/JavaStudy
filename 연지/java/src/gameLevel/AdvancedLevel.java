@@ -1,0 +1,4 @@
+package gameLevel;
+
+public class AdvancedLevel {
+}
