@@ -1,0 +1,70 @@
+기본클래스
+
+java.lang 패키지 
+	프로그래밍시 import 하지 않아도 자동으로 import
+
+equals 메서드
+equals(); 
+str1==str2 ==>> 동일한 메모리인지?
+str1.equals(str2); ==>> 동일한 문자인지 ?
+
+오버라이드로 재정의 가능.
+
+hashCode() 메서드  : 인스턴스의 저장 주소를 반환, 정보에 따라 해시함수가 다르게 구현
+	hash : 정보를 저장, 검색하기 위해 사용하는 자료구조
+자료의 특정 값(키 값) 에 대해 저장 위치를 반환
+ex) index(저장위치) = hash( key(객체정보) )
+힙 메모리에 인스턴스가 저장되는 방식이 hash.
+
+자바 가상 머신이 저장한 인스턴스의 주소값을 10진수로 반환
+논리적 동일함을 위해 squals()을 재정의 했다면 hashcode메서드도 재정의해서 동일 값이 반환되게해야함.
+
+clone() 메서드 : 
+-객체의 원본을 복제해서 사용, 
+-원본을 유지후 복사본 사용
+-기본 틀을 두고 복잡한 생성과정 반복x 복제
+
+객체의 정보( 멤버변수 값) 가 같은 인스턴스가 또 생성되는것이므로 객체지향 프로그램의 정보은닉, 객체보호의 관점에서 위배될 수 있음.
+clone()메서드 사용을 허가한다는 의미로 cloneaable 인터페이스를 명시해야함.
+
+
+String 클래스
+String str1= new String("abc"); //생성자의 매개변수로 문자열을 생성  >> 힙메모리에 인스턴스로 생성
+String str2 = "test"; // 문자열 상수를 가리키는 방식  >> 어딘가에(상수풀 )있는 test의 주소를 참조하는방법
+
+한번 생성된 String 값 (문자열) 은 불변(immutable)
+두 개의 문자열을 연결하면 새로운 인스턴스가 생성됨
+문자열 연결을 계속하면 메모리에 gabage가 많이 생길 수있음. 
+
+str1 = str1.concat(str2);
+str1과 str2라는 문자열 자체는 변하지않고  새로 생성된 문자열을 가리킴.
+
+문자열 연결 작업시
+StringBuilder, StringBuffer  : String 클래스는 아님 >> toString() 메서드로 String 반환
+내부적으로 가변적인 char[] 배열을 가지고 있는 클래스.
+문자열을 여러번 연결하거나 변경할때 유용. 매번 새로 생성X 기존의 배열을 변경 >>gabage생성X
+StringBuffer : 멀티쓰레드 프로그래밍에서 동기화를 보장
+단일 쓰레드 프로그램에서는 StringBuilder 사용 권장
+
+동기화란? 여려개의 쓰레드가 돌아갈 때,쓰레드간의 순서를 보장해주는것.
+
+Wrapper클래스 : 기본 자료형( ) 에 대한 클래스 
+
+오토박싱 ( int -> Integer ) 언박싱 (  Integer -> int )
+Integer : 객체, 
+int : 4바이트 기본자료형.
+
+Class 클래스
+ 자바의 모든 클래스, 인터페이스는 컴파일 후 class파일로 생성,
+class파일에는 객체의 정보 ( 멤버변수, 메서드 , 생성자등) 가 포함.
+Class 클래스는 컴파일된 class파일에서 객체의 정보를 가져올 수 있음.
+
+1.오브젝트 클래스의 getClass()메서드 사용하기
+String s = new String();
+Class c = s.getClass(); 
+2.클래스 파일 이름을 Class변수에 직접 대입하기
+Class c= String.Class;
+3.Class.forName("클래스이름") 메서드 사용하기       >>>>>>>>동적 로딩. 
+Class c= CLass.forName("java.lang.String");   
+
+reflection 프로그래밍: Class클래스를 이용하여 클래스의 정보를 가져와 활용하여 인스턴스 생성,메서드 호출하는등의 프로그래밍방식
